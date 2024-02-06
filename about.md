@@ -1,6 +1,7 @@
 ---
 layout: page
-title: About me 
+title: about me
 ---
 
-This is a static page. It could be an 'about page' if you'd like.
+I am a backend engineer, but I have interests in various fields.
+I plan to consistently record what I study and learn ~!
