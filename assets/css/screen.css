@@ -328,8 +328,10 @@ mark {
 
 code, tt {
     padding: 1px 3px;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 0.85em;
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
     white-space: pre-wrap;
     border: #E3EDF3 1px solid;
     background: #F7FAFB;
