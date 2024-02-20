@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Redis MSET, MGET 명령어 - 여러 키 동시에 설정 및 조회하기"
+title: "[Redis] MSET, MGET 명령어 - 여러 키 동시에 설정 및 조회하기"
 date: 2024-02-10 15:00:00
 categories: Redis
 ---
