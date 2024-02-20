@@ -800,14 +800,13 @@ body:not(.post-template) .post-title {
 }
 
 .post-date {
-    display: inline-block;
-    margin-left: 8px;
+    display: block; /* inline-block 대신 block으로 변경 */
+    margin: 0 auto; /* 좌우 여백을 auto로 설정하여 가운데 정렬 */
     padding-left: 12px;
     /* border-left: #d5dbde 1px solid; */
     text-transform: uppercase;
     font-size: 1.3rem;
     white-space: nowrap;
-    float: right;
 }
 
 .user-image {
