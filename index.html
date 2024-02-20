@@ -17,10 +17,10 @@ about: 'about.html'
     <div class="vertical">
         <div class="main-header-content inner">
             <h1 class="page-title">{{ site.name }}</h1>
-            <h2 class="page-description">
+            <!-- <h2 class="page-description">
                 {% if site.description %} {{ site.description }}. {% endif %}
                 {% if page.about %} <a href='{{page.about | relative_url}}'> about me </a> {% endif %}
-            </h2>
+            </h2> -->
         </div>
     </div>
     <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
@@ -41,13 +41,13 @@ about: 'about.html'
             <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
         </header>
         <footer class="post-meta">
-            {% if site.author %}
+            <!-- {% if site.author %}
                 <img class="author-thumb" src="{{'/assets/images/profile.png' | relative_url}}" alt="Author's profile picture" nopin="nopin" />
                 {{ site.author }}
             {% endif %}
             {% if post.categories.size > 0 %} 
                 {{ post.categories | array_to_sentence_string | prepend: 'on ' }} 
-            {% endif %}
+            {% endif %} -->
             <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
                 {{ post.date | date_to_string }}
             </time> 
