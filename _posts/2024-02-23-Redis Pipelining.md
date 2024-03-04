@@ -89,6 +89,94 @@ Server: 4
 
 ![redis06-pipeline_iops](/assets/images/redis06-pipeline_iops.png)
 
+
+### cf. 국내 RTT 조사
+
+```bash
+$ ping lge.com # LG전자 # 평균 RTT=150.572 ms
+PING lge.com (76.223.18.25): 56 data bytes
+64 bytes from 76.223.18.25: icmp_seq=0 ttl=245 time=8.745 ms
+64 bytes from 76.223.18.25: icmp_seq=1 ttl=245 time=42.042 ms
+64 bytes from 76.223.18.25: icmp_seq=2 ttl=245 time=283.384 ms
+64 bytes from 76.223.18.25: icmp_seq=3 ttl=245 time=135.976 ms
+64 bytes from 76.223.18.25: icmp_seq=4 ttl=245 time=176.372 ms
+64 bytes from 76.223.18.25: icmp_seq=5 ttl=245 time=219.597 ms
+```
+
+```bash
+$ ping skhynix.com # SK하이닉스 # 평균 RTT=86.417 ms
+PING skhynix.com (20.196.144.36): 56 data bytes
+64 bytes from 20.196.144.36: icmp_seq=0 ttl=115 time=9.676 ms
+64 bytes from 20.196.144.36: icmp_seq=1 ttl=115 time=7.818 ms
+64 bytes from 20.196.144.36: icmp_seq=2 ttl=115 time=8.750 ms
+64 bytes from 20.196.144.36: icmp_seq=3 ttl=115 time=8.250 ms
+64 bytes from 20.196.144.36: icmp_seq=4 ttl=115 time=47.495 ms
+64 bytes from 20.196.144.36: icmp_seq=5 ttl=115 time=91.606 ms
+64 bytes from 20.196.144.36: icmp_seq=6 ttl=115 time=335.978 ms
+64 bytes from 20.196.144.36: icmp_seq=7 ttl=115 time=53.741 ms
+64 bytes from 20.196.144.36: icmp_seq=8 ttl=115 time=94.027 ms
+```
+
+```bash
+$ ping kia.com # 기아자동차 # 평균 RTT=284.401 ms
+PING kia.com (209.198.180.28): 56 data bytes
+64 bytes from 209.198.180.28: icmp_seq=0 ttl=52 time=143.855 ms
+64 bytes from 209.198.180.28: icmp_seq=1 ttl=52 time=186.224 ms
+64 bytes from 209.198.180.28: icmp_seq=2 ttl=52 time=235.422 ms
+64 bytes from 209.198.180.28: icmp_seq=3 ttl=52 time=278.486 ms
+64 bytes from 209.198.180.28: icmp_seq=4 ttl=52 time=325.061 ms
+64 bytes from 209.198.180.28: icmp_seq=5 ttl=52 time=228.472 ms
+64 bytes from 209.198.180.28: icmp_seq=6 ttl=52 time=276.008 ms
+64 bytes from 209.198.180.28: icmp_seq=7 ttl=52 time=518.370 ms
+64 bytes from 209.198.180.28: icmp_seq=8 ttl=52 time=366.124 ms
+```
+
+```bash
+$ ping celtrion.com # 셀트리온 # 평균 RTT=231.204 ms
+PING celtrion.com (66.81.203.196): 56 data bytes
+64 bytes from 66.81.203.196: icmp_seq=0 ttl=52 time=272.937 ms
+64 bytes from 66.81.203.196: icmp_seq=1 ttl=52 time=317.567 ms
+64 bytes from 66.81.203.196: icmp_seq=2 ttl=52 time=137.787 ms
+64 bytes from 66.81.203.196: icmp_seq=3 ttl=52 time=137.409 ms
+64 bytes from 66.81.203.196: icmp_seq=4 ttl=52 time=451.104 ms
+64 bytes from 66.81.203.196: icmp_seq=5 ttl=52 time=138.996 ms
+64 bytes from 66.81.203.196: icmp_seq=6 ttl=52 time=155.933 ms
+```
+
+```bash
+$ ping gsgcorp.com # GS # 평균 RTT=47.523 ms
+PING gsgcorp.com (13.209.139.254): 56 data bytes
+64 bytes from 13.209.139.254: icmp_seq=0 ttl=110 time=30.281 ms
+64 bytes from 13.209.139.254: icmp_seq=1 ttl=110 time=40.400 ms
+64 bytes from 13.209.139.254: icmp_seq=2 ttl=110 time=87.502 ms
+64 bytes from 13.209.139.254: icmp_seq=3 ttl=110 time=8.373 ms
+64 bytes from 13.209.139.254: icmp_seq=4 ttl=110 time=62.710 ms
+64 bytes from 13.209.139.254: icmp_seq=5 ttl=110 time=85.802 ms
+64 bytes from 13.209.139.254: icmp_seq=6 ttl=110 time=10.718 ms
+```
+
+```bash
+$ ping newjeans.kr # 뉴진스 # 평균 RTT=12.824 ms
+PING newjeans.kr (54.230.176.89): 56 data bytes
+64 bytes from 54.230.176.89: icmp_seq=0 ttl=243 time=10.412 ms
+64 bytes from 54.230.176.89: icmp_seq=1 ttl=243 time=16.290 ms
+64 bytes from 54.230.176.89: icmp_seq=2 ttl=243 time=10.877 ms
+64 bytes from 54.230.176.89: icmp_seq=3 ttl=243 time=15.340 ms
+64 bytes from 54.230.176.89: icmp_seq=4 ttl=243 time=10.767 ms
+64 bytes from 54.230.176.89: icmp_seq=5 ttl=243 time=9.769 ms
+```
+
+=> 각 평균 RTT는 다음과 같다.
+- LG전자: 150.572 ms
+- SK하이닉스: 86.417 ms
+- 기아자동차: 284.401 ms
+- 셀트리온: 231.204 ms
+- GS: 47.523 ms
+- 뉴진스: 12.824 ms
+
+=> 전체 평균 RTT는 다음과 같다.
+- 135.49 ms
+
 ---
 
 ## Code Example in Go
